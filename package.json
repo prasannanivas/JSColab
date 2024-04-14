@@ -1,5 +1,5 @@
 {
-  "name": "jbook",
+  "name": "local-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,7 +39,8 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "serve": "node local-api.js"
   },
   "eslintConfig": {
     "extends": [
