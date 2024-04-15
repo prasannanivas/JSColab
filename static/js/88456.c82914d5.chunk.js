@@ -1,0 +1,2 @@
+(self.webpackChunklocal_client=self.webpackChunklocal_client||[]).push([[88456],{88456:()=>{!function(e){var a=e.util.clone(e.languages.typescript);e.languages.tsx=e.languages.extend("jsx",a);var l=e.languages.tsx.tag;l.pattern=RegExp(/(^|[^\w$]|(?=<\/))/.source+"(?:"+l.pattern.source+")",l.pattern.flags),l.lookbehind=!0}(Prism)}}]);
+//# sourceMappingURL=88456.c82914d5.chunk.js.map

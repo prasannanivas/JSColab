@@ -1,0 +1,2 @@
+(self.webpackChunklocal_client=self.webpackChunklocal_client||[]).push([[18981],{18981:()=>{Prism.languages.git={comment:/^#.*/m,deleted:/^[-\u2013].*/m,inserted:/^\+.*/m,string:/("|')(?:\\.|(?!\1)[^\\\r\n])*\1/m,command:{pattern:/^.*\$ git .*$/m,inside:{parameter:/\s--?\w+/m}},coord:/^@@.*@@$/m,"commit-sha1":/^commit \w{40}$/m}}}]);
+//# sourceMappingURL=18981.adeb4f73.chunk.js.map

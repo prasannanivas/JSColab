@@ -1,0 +1,2 @@
+(self.webpackChunklocal_client=self.webpackChunklocal_client||[]).push([[26707],{26707:()=>{!function(e){function a(a,n){e.languages[a]&&e.languages.insertBefore(a,"comment",{"doc-comment":n})}var n=e.languages.markup.tag,t={pattern:/\/\/\/.*/,greedy:!0,alias:"comment",inside:{tag:n}},c={pattern:/'''.*/,greedy:!0,alias:"comment",inside:{tag:n}};a("csharp",t),a("fsharp",t),a("vbnet",c)}(Prism)}}]);
+//# sourceMappingURL=26707.4573dd53.chunk.js.map
