@@ -1,38 +1,62 @@
-import { Dispatch } from "redux";
+import { Dispatch, Middleware } from "redux";
 import { Action } from "../actions";
 import { ActionType } from "../action-types";
 import { saveCells } from "../action-creators";
 import { RootState } from "../reducers";
 
-export const persistMiddleware = ({
-  dispatch,
-  getState,
-}: {
-  dispatch: Dispatch<Action>;
-  getState: () => RootState;
-}) => {
-  return (next: (action: Action) => void) => {
-    return (action: Action) => {
-      next(action);
+// export const persistMiddleware: Middleware<Dispatch<Action>> = ({
+//   dispatch,
+//   getState,
+// }: {
+//   dispatch: Dispatch<Action>;
+//   getState: () => RootState;
+// }) => {
+//   return (next: (action: Action) => void) => {
+//     return (action: Action) => {
+//       next(action);
 
-      if (
-        [
-          ActionType.MOVE_CELL,
-          ActionType.UPDATE_CELL,
-          ActionType.INSERT_CELL_AFTER,
-          ActionType.DELETE_CELL,
-        ].includes(action.type)
-      ) {
+//       if (
+//         [
+//           ActionType.MOVE_CELL,
+//           ActionType.UPDATE_CELL,
+//           ActionType.INSERT_CELL_AFTER,
+//           ActionType.DELETE_CELL,
+//         ].includes(action.type)
+//       ) {
 
-        let timer;
-        if(timer){
-            clearTimeout(timer)
+//         let timer;
+//         if(timer){
+//             clearTimeout(timer)
+//         }
+//         timer = setTimeout(()=> {
+//             saveCells()(dispatch, getState);
+//         }, 300);
+
+//       }
+//     };
+//   };
+// };
+export const persistMiddleware: Middleware<Dispatch<Action>> = ({ dispatch, getState }: { dispatch: Dispatch<Action>, getState: ()=> RootState }) => {
+    return (next: (action: Action) => void) => {
+        return (action: any) => {
+            next(action);
+            if (
+                        [
+                          ActionType.MOVE_CELL,
+                          ActionType.UPDATE_CELL,
+                          ActionType.INSERT_CELL_AFTER,
+                          ActionType.DELETE_CELL,
+                        ].includes(action.type)
+                      ) {
+                
+                        let timer;
+                        if(timer){
+                            clearTimeout(timer)
+                        }
+                        timer = setTimeout(()=> {
+                            saveCells()(dispatch, getState);
+                        }, 300);
+                
         }
-        timer = setTimeout(()=> {
-            saveCells()(dispatch, getState);
-        }, 300);
-
-      }
-    };
-  };
-};
+    }
+}}
